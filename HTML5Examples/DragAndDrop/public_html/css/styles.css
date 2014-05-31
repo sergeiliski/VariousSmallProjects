@@ -1,0 +1,28 @@
+.target {
+    width: 220px;
+    height: 350px;
+    float: left;
+    margin: 15px 15px 15px 15px;
+    border: 1px solid;
+}
+
+body {
+    margin: 0 auto;
+    width: 650px;
+}
+
+.source {
+    height: 120px;
+    width: 100%;
+    border: 1px solid;
+}
+
+.drag {
+    opacity: 0.25;
+}
+
+.over {
+    background-color: yellow;
+}
+
+

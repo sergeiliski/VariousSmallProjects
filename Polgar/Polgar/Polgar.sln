@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polgar", "Polgar\Polgar.csproj", "{F826CF54-65DB-4209-B61E-17305F851C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolgarLibrary", "PolgarLibrary\PolgarLibrary.csproj", "{F713362C-C403-4A87-AED0-688BC6902EBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolgarTests", "PolgarTests\PolgarTests.csproj", "{FCC70A96-4581-4788-BF79-89B97F4D81C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F826CF54-65DB-4209-B61E-17305F851C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F826CF54-65DB-4209-B61E-17305F851C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F826CF54-65DB-4209-B61E-17305F851C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F826CF54-65DB-4209-B61E-17305F851C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F713362C-C403-4A87-AED0-688BC6902EBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F713362C-C403-4A87-AED0-688BC6902EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F713362C-C403-4A87-AED0-688BC6902EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F713362C-C403-4A87-AED0-688BC6902EBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC70A96-4581-4788-BF79-89B97F4D81C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC70A96-4581-4788-BF79-89B97F4D81C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC70A96-4581-4788-BF79-89B97F4D81C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC70A96-4581-4788-BF79-89B97F4D81C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

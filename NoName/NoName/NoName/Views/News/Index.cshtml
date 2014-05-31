@@ -1,0 +1,29 @@
+﻿@model List<NewsBulletinViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (Model.Any()) {
+    <div class="news">
+        <h2>Latest news messages:</h2>
+
+        @foreach (var bulletin in Model.OrderByDescending(x => x.Timestamp)) {
+            <div class="well art">
+                <p class="art-header">
+                    @bulletin.Title
+                    <p class="art-subtitle">
+                        On @bulletin.Timestamp.ToShortDateString()
+                    </p>
+                    <hr />
+
+                    @bulletin.Introduction
+
+                    <br />
+                    <span class="pull-right">@Html.ActionLink("Read more...", "Story", "News", new { id = bulletin.ID }, null)</span>
+                </p>
+            </div>
+            <br />
+        }
+    </div>
+}

@@ -1,0 +1,48 @@
+﻿<div class="modal hide fade" id="contactModalTarget" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <h3>Contact us!</h3>
+    </div>
+
+    <div class="modal-body">
+        @using (Html.BeginForm("Contact", "Contact", FormMethod.Post)) {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal well" id="registerform">
+                <p>
+                    <select id="Category" name="Category" class="span3">
+                        <option value="0" disabled="disabled" selected="selected">--Select a category--</option>
+                        <option value="1">My account</option>
+                        <option value="2">Website functionality</option>
+                        <option value="3">Suggestions</option>
+                        <option value="4">Other</option>
+                    </select>
+                </p>
+
+                @{
+            var email = "";
+            if (User.Identity.IsAuthenticated) {
+                var user = ((UserViewModel) Session["user"]);
+                if (user != null) {
+                    email = user.Email;
+                }
+
+            }
+                }
+
+                <p>
+                    <input type="text" id="Email" name="Email" placeholder="Your email address" value="@email" />
+                </p>
+
+                <p>
+                    <input type="text" id="Subject" name="Subject" placeholder="Subject" />
+                </p>
+
+                <label for="Body">Message</label>
+                <textarea name="Body" id="Body" class="input-xlarge span5" rows="8"></textarea>
+                <p style="margin: 10px 0 -10px 0">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </p>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title>Drag & Drop example</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>   
+    </head> 
+
+    <body>
+        <div id="source-container" 
+             data-role="drag-drop-container"
+             class="well source">
+            
+            <img id="homer" 
+                 draggable="true" 
+                 src="img/homer.png" />
+            <img id="kenny" 
+                 draggable="true" 
+                 src="img/kenny.jpg" />            
+            <img id="cartman" 
+                 draggable="true" 
+                 src="img/cartman.jpg" />
+            <img id="randy" 
+                 draggable="true" 
+                 src="img/randy.png" />
+            <img id="bart" 
+                 draggable="true" 
+                 src="img/bart.jpg" />
+            <img id="consuela" 
+                 draggable="true" 
+                 src="img/consuela.jpg" />
+        </div>
+        
+        <div id="target1" 
+             data-role="drag-drop-container"
+             class="well target">
+        </div>
+        
+        <div id="target2"
+             data-role="drag-drop-container"
+             class="well target">
+        </div>
+        
+        <div id="test"
+             class="well" style="clear: both;"></div>
+
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
+</html>

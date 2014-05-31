@@ -1,0 +1,18 @@
+﻿@model List<NoName.Models.Domain.Message>
+
+@{
+    ViewBag.Title = "Messages";
+}
+
+<h2>Messages</h2>
+
+@foreach (var mess in Model) {
+    <p>
+        <span>@mess.ID</span>
+        <span>@mess.Body</span>
+        <span>@mess.Category.Category</span>
+        @if (mess.Sender != null) {
+            <span>@mess.Sender.Username</span>
+        }
+    </p>
+}

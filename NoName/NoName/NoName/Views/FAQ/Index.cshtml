@@ -1,0 +1,32 @@
+﻿@model List<FAQViewModel>
+
+@{
+    ViewBag.Title = "NoName - FAQ";
+}
+
+<div class="faq">
+    @if (Model.Any()) {
+        <h2>Frequently Asked Questions</h2>
+
+        foreach (var item in Model) {
+        <div class="faqitem">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <td class="faqquestion">
+                            @item.Question
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="faqanswer">
+                            @item.Answer
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        }
+    }
+</div>

@@ -1,0 +1,45 @@
+﻿@model ShowViewModel
+
+<div class="episodes">
+    <span id="seasons">|
+    @for (var i = 1; i <= Model.Episodes.Max(x => x.Season); i++) {
+        if (i == ViewBag.Season) {
+        <span class="active">Season @i</span>
+        } else {
+        @Html.ActionLink("Season " + @i, "Show", "Show", new { showID = Model.ShowID, season = i }, null);
+        }
+
+        @Html.Raw("|");
+    }
+    </span>
+
+    <table class="table table-bordered table-condensed table-hover table-striped mytable" id="season">
+        <thead>
+            <tr>
+                <th>Episode</th>
+                <th>Title</th>
+                <th>Aired on</th>
+                <th>Download</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ep in Model.Episodes.Where(x => x.Season == ViewBag.Season).OrderByDescending(x => x.AirDate)) {
+                <tr>
+                    <td>
+                        @ep.EpisodeNumber
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Episode", new { controller = "Show", episodeID = ep.EpisodeID })" rel="tooltip" data-placement="top" title="@ep.Description.Truncate(256)">@ep.Title</a>
+                    </td>
+                    <td>
+                        @ep.AirDate.ToShortDateString()
+                    </td>
+                    <td>
+                        <a href="@ep.DownloadLink">
+                            <img src="~/Content/images/download.png" alt="Download episode @ep.EpisodeNumber of @Model.Title" /></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

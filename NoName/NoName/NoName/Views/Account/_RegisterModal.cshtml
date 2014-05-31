@@ -1,0 +1,55 @@
+﻿@model NoName.Models.RegisterModel
+
+<div class="modal hide fade" id="registerModalTarget" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <h3>Create a new account</h3>
+    </div>
+    <div class="modal-body">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post)) {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal well">
+                <div class="control-group registerform">
+                    @Html.LabelFor(m => m.Username, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Username, new { Placeholder = "Username" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Username)</span>
+                    </div>
+                </div>
+
+                <div class="control-group registerform">
+                    @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.PasswordFor(m => m.Password, new { Placeholder = "Password" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Password)</span>
+                    </div>
+                </div>
+
+                <div class="control-group registerform">
+                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { Placeholder = "Confirm Password" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.ConfirmPassword)</span>
+                    </div>
+                </div>
+
+                <div class="control-group registerform">
+                    @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Email, new { Placeholder = "E-mail address" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Email)</span>
+                    </div>
+                </div>
+
+                <div class="control-group registerform">
+                    <div class="controls">
+                        <input type="submit" value="Register" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="modal-footer">
+        Already have an account? <a href="#loginModalTarget" id="registerLoginModal">Login now!</a>
+    </div>
+</div>

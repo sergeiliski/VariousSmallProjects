@@ -1,0 +1,75 @@
+To study:
+
+Strategy, //
+Simple Factory, //
+Decorator, //
+Adapter, //
+Façade, 
+Observer, //
+State, //
+Singleton. //
+
+
+
+
+Done:
+
+Simple Factory
+Provides an abstraction or an interface and lets subclasses or implementing classes decide 
+which class or method should be instantiated or called, based on the conditions or parameters given.
+
+1) Interface maken met benodigde methodes.
+2) Verschillende klassen de interface laten implementeren en persoonlijk manipuleren.
+3) Factory met een switch in de constructor die bepaald welke klasse geinstantieerd wordt.
+
+
+Singleton
+One instance of a class or one value accessible globally in an application.
+
+1) Statische lokale variabele
+2) Constructor met getInstance() in de definitie
+3) Kijken of er al een instantie bestaat en deze teruggeven.
+
+Adapter
+Convert the existing interfaces to a new interface to achieve compatibility and reusability of the unrelated classes in one application.
+
+1) Interface met algemene methodes maken
+2) Klasse laten afleiden van interface
+3) Vreemde klasse met eigen klasses maken
+4) Adapter maken die de interface implementeert. Composeer een instantie van de vreemde klasse
+5) Verbind de methodes van de vreemde klasse door ze aan te roepen in de corresponderende methodes in de adapter
+
+Strategy
+Group several algorithms in a single module to provide alternatives. Also known as policy.
+
+1) Algemene abstracte klasse animal maken
+2) Interface van het wisselend gedrag maken
+3) Concrete implementaties van de interface en individuele uitvoering
+4) Compositie van de interface in de algemene klasse
+5) Waardes doorgeven aan de gecomposeerde interface declaratie
+6) Subklasses maken van de algemene klasse
+
+State
+An object's behavior change is represented by its member classes, which share the same super class.
+
+1) Interface met algemene methodes maken
+2) Sub klasses aanmaken die de methodes overerven uit interface
+3) Controller aanmaken met instanties van de subklasses en één algemene instantie van de connectie (alles met static)
+4) Afhankelijk van keuze gebruiker, algemene instantie aanpassen naar de gekozen subklasse
+5) Controller functies aanroepen ipv subklasse functies
+
+Observer
+One object changes state, all of its dependents are updated automatically.
+
+Decorator
+Attach additional responsibilities or functions to an object dynamically or statically. Also known as Wrapper.
+
+1) Interface met algemene methodes maken
+2) Basis klasse die het potentieel samengesteld object voorsteld met basis waarden, implementeert de interface
+3) Abstracte klasse maken die dient als decorator, implementeert de interface. Houdt een instantie variabele bij van een basis object
+4) Optionele decoraties maken die de decorator extenden, de decorator aanroepen en hun individuele waarden bij toevoegen
+
+Facade
+Make a complex system simpler by providing a unified or general interface, which is a higher layer to these subsystems.
+
+1) 

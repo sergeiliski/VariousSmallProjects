@@ -1,0 +1,61 @@
+﻿@model EpisodeViewModel
+@{
+    ViewBag.Title = "Episode";
+}
+
+<div class="mycrumb">
+    <ul class="breadcrumb center">
+        <li>@Html.ActionLink("Shows", "Index", "Show")</li>
+        <span class="divider">/</span>
+        <li>@Html.ActionLink(@Model.Show.Title, "Show", "Show", new { @showID = Model.Show.ShowID }, null)</li>
+        <span class="divider">/</span>
+        <li class="active">@Model.Title</li>
+    </ul>
+</div>
+
+<div class="overview">
+
+    <h2>Season @Model.Season, Episode @Model.EpisodeNumber: @Model.Title</h2>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>Show:
+            </td>
+            <td class="data">
+                @Model.Show.Title
+            </td>
+        </tr>
+
+        <tr>
+            <td>Title:
+            </td>
+            <td class="data">
+                @Model.Title
+            </td>
+        </tr>
+
+        <tr>
+            <td>Description:
+            </td>
+            <td class="data">
+                @Model.Description
+            </td>
+        </tr>
+
+        <tr>
+            <td>AirDate:
+            </td>
+            <td class="data">
+                @Model.AirDate.ToShortDateString()
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <a href="@Model.DownloadLink" target="_blank">
+                    <img src="~/Content/images/download.png" alt="Download episode @Model.EpisodeNumber of @Model.Show.Title" /></a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@Html.ActionLink("Back to show", "Show", "Show", new { showID = Model.ShowID }, new { @class = "btn btn-primary" })

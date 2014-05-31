@@ -1,0 +1,20 @@
+﻿<div class="modal hide fade" id="adminModalTarget" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <h3>Administration options</h3>
+    </div>
+    <div class="modal-body">
+        <div class="well center">
+            <p>
+                <a href="@Url.Action("PopulateDatabase", "Admin")" rel="tooltip" data-placement="right" class="btn btn-info" id="popdb">Populate database</a>
+            </p>
+            <p>
+                <a href="@Url.Action("Crawl", "Admin")" rel="tooltip" data-placement="right" class="btn btn-info" id="upddb">Update database</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <div class="alert alert-danger">Do not close this window while the operation is in progress!</div>
+    </div>
+</div>

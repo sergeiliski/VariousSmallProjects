@@ -1,0 +1,248 @@
+body {
+    padding-bottom: 40px;
+    padding-top: 60px;
+    background-color: rgb(240, 240, 240);
+}
+
+.submenu {
+    overflow: hidden;
+    background-color: rgb(195, 192, 192);
+    width: 45%;
+    margin: -20px auto 0 auto;
+    border-radius: 25px;
+}
+
+.link {
+    font-size: 2em;
+    font-family: cursive;
+    color: black;
+    text-decoration: none;
+}
+
+    .link:hover {
+        text-decoration: none;
+    }
+
+#menu-left {
+    width: 35%;
+    float: left;
+    padding: 15px 15px 15px 75px;
+}
+
+#menu-right {
+    width: 35%;
+    float: right;
+    padding: 15px 0 15px 15px;
+}
+
+.mytable {
+    padding-top: 15px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .mytable th {
+        text-align: center;
+        font-weight: bold;
+        background-color: rgb(228, 228, 228);
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#e3e3e3), color-stop(.6,#B3B3B3));
+        background-image: -moz-linear-gradient(top, #D6D6D6, #B0B0B0, #B3B3B3 90%);
+        text-shadow: black 2px 1px 1px;
+    }
+
+    .mytable td {
+        text-align: center;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        border-bottom: 1px solid #fff;
+        border-top: 1px solid #fff;
+    }
+
+.faq {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
+}
+
+.faqquestion {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.faqanswer {
+    background-color: rgb(228, 228, 228);
+}
+
+.faq table td {
+    text-align: center;
+    padding: 0.25em 0.25em 0.25em 0.25em;
+}
+
+.faq h2 {
+    text-align: center;
+}
+
+.faqitem {
+    padding: 1em;
+}
+
+.overview table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 0 none;
+    width: 40%;
+    padding: 5px 5px 5px 5px;
+}
+
+.overview td.data {
+    font-weight: normal;
+}
+
+.overview h2 {
+    text-align: center;
+    padding: 0 0 5px 0;
+}
+
+.overview td.link {
+    text-align: center;
+}
+
+.overview td {
+    text-align: center;
+    padding: 0.25em 0.25em 0.25em 0.25em;
+}
+
+.actions {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.episodes {
+    clear: both;
+}
+
+#seasons {
+    margin-left: 31%;
+    margin-right: auto;
+    width: 10%;
+}
+
+.overview .center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    padding-bottom: 10px;
+}
+
+.news {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 15px;
+}
+
+.art {
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+}
+
+.art-header {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.art-subtitle {
+    font-size: 0.8em;
+}
+
+.mycrumb {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    margin-top: 20px;
+}
+
+.mysearch {
+    margin-left: 27%;
+    margin-right: auto;
+    width: 100%;
+    margin-bottom: -30px;
+}
+
+/* Styles the search autocomplete */
+ul.ui-autocomplete.ui-menu {
+    font-size: 1em;
+    list-style-type: none;
+    padding: 2px 5px 0 5px;
+    font-style: italic;
+}
+
+.pagedlist {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.registerform {
+    margin-left: -45px;
+}
+
+.loginform {
+    margin-left: -80px;
+}
+
+#loginModalTarget {
+    width: 400px;
+}
+
+#registerModalTarget {
+    width: 450px;
+}
+
+.contactform {
+    margin-left: -120px;
+}
+
+.erroritem {
+    width: 31%;
+    margin-right: 10px;
+    padding: 0 5px 5px 5px;
+}
+
+/* Carousel for show images */
+#myCarousel {
+    width: 80%;
+    margin: 10px auto 10px auto;
+}
+
+/* Removes the default 20px margin and creates some padding space for the indicators and controls */
+.carousel {
+    margin-bottom: 0;
+    padding: 0 40px 30px 40px;
+}
+/* Reposition the controls slightly */
+.carousel-control {
+    left: -12px;
+}
+
+    .carousel-control.right {
+        right: -12px;
+    }
+/* Changes the position of the indicators */
+.carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: 0;
+    margin-right: -19px;
+}
+    /* Changes the colour of the indicators */
+    .carousel-indicators li {
+        background: #c0c0c0;
+    }
+
+    .carousel-indicators .active {
+        background: #333333;
+    }

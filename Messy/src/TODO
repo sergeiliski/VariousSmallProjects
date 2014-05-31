@@ -1,0 +1,4 @@
+Revise some logging stuff
+Add WAN
+Disable GUI when no connection exists
+Implement actual connection check

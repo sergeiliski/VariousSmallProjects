@@ -1,0 +1,26 @@
+@using NoName.Models.Domain
+<p>
+    You have received a new message on NoName! Do not reply to this email: copy the email below and create a new conversation.
+</p>
+@{
+    var message = (Message) ViewBag.Message;
+}
+<hr />
+<ul>
+    <li>From: <strong>@message.Email</strong></li>
+    @if (message.Sender != null) {
+        <li>User: <strong>@message.Sender.Username</strong> (User ID <strong>@message.UserID</strong>)</li>
+    } else {
+        <li>User: <strong>Unknown visitor</strong></li>
+    }
+
+    <li>Date sent: <strong>@message.Date.ToLongTimeString()</strong></li>
+    <li>Category: <strong>@message.Category.Category</strong></li>
+    <li>Subject: <strong>@message.Subject</strong></li>
+</ul>
+<h1>Message:</h1>
+<div>
+    @message.Body
+</div>
+
+<br />

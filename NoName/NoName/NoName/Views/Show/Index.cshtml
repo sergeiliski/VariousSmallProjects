@@ -1,0 +1,20 @@
+﻿@model IPagedList<ShowViewModel>
+@{
+    ViewBag.Title = "NoName - Shows";
+}
+<div class="mycrumb">
+    <ul class="breadcrumb">
+        <li class="active">Shows</li>
+    </ul>
+</div>
+
+<form method="GET" action="@Url.Action("Index", "Show")" data-nn-ajax="true" data-nn-target="#contentlist" class="form-search">
+    <div class="input-append mysearch">
+        <input type="search" class="span5 search-query" id="q" name="query" data-nn-autocomplete="@Url.Action("AutoComplete")" />
+        <input type="submit" class="btn" value="Search" />
+    </div>
+</form>
+
+<div id="contentlist">
+    @Html.Partial("_Shows", Model)
+</div>

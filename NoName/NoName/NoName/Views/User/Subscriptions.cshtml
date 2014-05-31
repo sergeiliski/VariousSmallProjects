@@ -1,0 +1,15 @@
+﻿@model UserViewModel
+
+@{
+    ViewBag.Title = "Subscriptions";
+}
+
+<h2>Subscriptions</h2>
+
+@if (User.Identity.IsAuthenticated && Model.ShowSubscriptions.Any()) {
+    foreach (var sub in Model.ShowSubscriptions) {
+    <p>
+        @sub.Show.Title
+    </p>
+    }
+}

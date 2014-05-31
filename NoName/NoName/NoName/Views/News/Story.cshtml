@@ -1,0 +1,21 @@
+﻿@model NewsBulletinViewModel
+
+@{
+    ViewBag.Title = "Story";
+}
+
+<div class="news">
+    <div class="well art">
+        <p class="art-header">
+            @Model.Title
+            <p class="art-subtitle">
+                On @Model.Timestamp.ToShortDateString()
+            </p>
+            <hr />
+            <p>
+                <strong>@Model.Introduction</strong>
+            </p>
+            <p>@Model.Body</p>
+        </p>
+    </div>
+</div>

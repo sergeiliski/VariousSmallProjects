@@ -1,0 +1,85 @@
+﻿@model ShowViewModel
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<div class="mycrumb">
+    <ul class="breadcrumb center">
+        <li>@Html.ActionLink("Shows", "Index", "Show")</li>
+        <span class="divider">/</span>
+        <li class="active">@Model.Title</li>
+    </ul>
+</div>
+
+<div class="center actions">
+    @Html.ActionLink("Download all episodes", "Download", "Show", new { showID = Model.ShowID }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Check for updates", "Crawl", "Admin", new { showID = Model.ShowID }, new { @class = "btn btn-primary" })
+    @if (User.Identity.IsAuthenticated) {
+        @(((UserViewModel) Session["user"]).ShowSubscriptions.Any(x => x.ShowID == Model.ShowID) ? Html.ActionLink("Unsubscribe", "Unsubscribe", "User", new { showID = Model.ShowID }, new { @class = "btn btn-danger" }) : Html.ActionLink("Subscribe", "Subscribe", "User", new { showID = Model.ShowID }, new { @class = "btn btn-success" }))
+    }
+</div>
+
+<div>
+    <img src="@Model.Poster" alt="@Model.Title" />
+</div>
+
+<div class="overview">
+    <h2>@Model.Title</h2>
+
+    <table class="table">
+        <tr>
+            <th>Description:
+            </th>
+            <td class="data">
+                @Model.Description
+            </td>
+        </tr>
+
+        <tr>
+            <th>StartDate:
+            </th>
+            <td class="data">
+                @Model.StartDate.ToShortDateString()
+            </td>
+        </tr>
+        <tr>
+            <th>EndDate:
+            </th>
+            <td class="data">
+                @if (Model.EndDate != null) {
+                    @Model.EndDate.GetValueOrDefault().ToShortDateString()
+                } else {
+                    <text>Unknown</text>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a href="@Model.IMDb" target="_blank">IMDb</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <a href="@Model.EZTV" target="_blank">EZTV</a>
+            </td>
+        </tr>
+
+        <tr>
+            <th>Genres:
+            </th>
+            <td>
+                <ul>
+                    @foreach (var item in Model.Genres) {
+                        <li>@item.Name</li>
+                    }
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@if (Model.Episodes.Any()) {
+    @Html.Partial("_Episodes")
+}

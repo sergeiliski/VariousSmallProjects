@@ -172,3 +172,8 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+/AlgorithmsAndDesignPatterns/nbproject/private/
+/AlgorithmsAndDesignPatterns/dist/
+/JavaApplication3/nbproject/private/
+/JavaApplication4/nbproject/private/
+/JavaApplication5/nbproject/private/

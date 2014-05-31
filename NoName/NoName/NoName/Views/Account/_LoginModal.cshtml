@@ -1,0 +1,43 @@
+﻿@model NoName.Models.LoginModel
+
+<div class="modal hide fade" id="loginModalTarget" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <h3>Login to NoName.com</h3>
+    </div>
+    <div class="modal-body">
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post)) {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal well">
+                <div class="control-group loginform">
+                    @Html.LabelFor(m => m.Username, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Username, new { Placeholder = "Username" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Username)</span>
+                    </div>
+                </div>
+                <div class="control-group loginform">
+                    @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.PasswordFor(m => m.Password, new { Placeholder = "Password" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Password)</span>
+                    </div>
+                </div>
+                <div class="control-group loginform">
+                    <label class="control-label"></label>
+                    <div class="controls checkbox">
+                        @Html.CheckBoxFor(m => m.RememberMe) Remember me
+                    </div>
+                </div>
+                <div class="control-group loginform">
+                    <div class="controls">
+                        <input type="submit" value="Login" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="modal-footer">
+        New to NoName.com? <a href="#registerModalTarget" id="loginRegistrationModal">Login now!</a>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ToSecond">Load secondary activity</string>
+  <string name="Second">What up, second activity</string>
+  <string name="ToMain">Load Main activity</string>
+</resources>

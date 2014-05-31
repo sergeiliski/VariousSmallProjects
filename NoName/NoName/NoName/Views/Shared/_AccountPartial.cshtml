@@ -1,0 +1,21 @@
+﻿<li class="divider-vertical"></li>
+@if (Request.IsAuthenticated) {
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, @User.Identity.Name <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="@Url.Action("Manage", "Account")"><i class="icon-user"></i>Manage account</a></li>
+            <li><a href="#adminModalTarget" id="adminModal"><i class="icon-cog"></i>Admin panel</a></li>
+            <li class="divider"></li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="icon-off"></i>Logout</a></li>
+        </ul>
+    </li>
+} else {
+    <li><a href="#registerModalTarget" id="registerModal">Register</a></li>
+    <li><a href="#loginModalTarget" id="loginModal">Login</a></li>
+}
+
+<div style="display: none;">
+    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+        @Html.AntiForgeryToken()
+    }
+</div>
